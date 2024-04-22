@@ -867,13 +867,13 @@ Grafana helm으로 설치하기 : https://peterica.tistory.com/301)
 
 ## 4-1. Prometheus 설치
 
-- 1) Prometheus Operator Crd 및 Prometheus Operator 설치 : `prometheus-operator-deploy.yaml`
+- 1) Prometheus Operator Crd 및 Prometheus Operator 설치  
     - `curl -s https://raw.githubusercontent.com/AmarendraSingh88/kafka-on-kubernetes/main/kafka-demo/demo3-monitoring/prometheus-operator-deployment.yaml | sed -e 's/namespace: monitoring/namespace: kafka-system/' > prometheus-operator-deploy.yaml`
     - `kubectl apply -f prometheus-operator-deploy.yaml`
-- 2) Pod Monitor 설치 : `strimzi-pod-monitor.yaml`
+- 2) Pod Monitor 설치  
     - `cat <strimzi 4.0 파일경로>/examples/metrics/prometheus-install/strimzi-pod-monitor.yaml | sed -e 's/- myproject/- kafka-system/' > strimzi-pod-monitor.yaml`
     - `kubectl apply -f strimzi-pod-monitor.yaml`
-- 3) Prometheus Rule 설치 : `prometheus-rules.yaml`
+- 3) Prometheus Rule 설치   
     - `cat <strimzi 4.0 파일경로>/examples/metrics/prometheus-install/prometheus-rules.yaml > prometheus-rules.yaml`
     - `kubectl apply -f prometheus-rules.yaml`
 - 4) prometheus 설치 : `vi prometheus.yaml` > `kubectl apply -f prometheus.yaml`
