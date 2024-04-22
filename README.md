@@ -148,7 +148,7 @@ data-kafka-cluster-zookeeper-2   Bound    kafka-pv-2           5Gi        RWX   
     metadata:
       # 이름 바꾸지 말고 그대로
       # data-0-kafka-cluster-kafka-1, data-0-kafka-cluster-kafka-2 등 위의 pvc정보 참고해서 만들 것!!!
-      name: **data-0-kafka-cluster-kafka-0 #이름 바꾸지 말고 그대로!**
+      name: data-0-kafka-cluster-kafka-0 
     spec:
       accessModes:
       - ReadWriteMany
