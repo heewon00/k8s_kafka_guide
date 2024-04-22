@@ -189,7 +189,7 @@ cluster operator가 **zookeeper 클러스터와 kafka 클러스터를 관리하�
             			openshift.io/sa.scc.mcs=s0:c27,c19
             			openshift.io/sa.scc.supplemental-groups=1000740000/10000
             ```
-            
+            ㅎ
             위의 예시에서는 upplemental-groups가 `1000740000/10000` 이므로 `[10740000,10749999]` 사이의 값을 설정해주어야 합니다.
             
         - 다음의 값을 반영한 `cluster.yaml` 파일입니다.
@@ -816,7 +816,7 @@ helm을 통해 설치합니다.  (helm이 설치되어 있지 않다면 [🔗hel
         ```java
         root@edu3:~/icis-tr/kafka/strimzi# k edit svc kafka-ui
           ports:
-          **- name: http**
+          - name: http
             port: 80
             protocol: TCP
             targetPort: http
@@ -824,7 +824,8 @@ helm을 통해 설치합니다.  (helm이 설치되어 있지 않다면 [🔗hel
         
         혹은 okd UI에서 확인
         
-        ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/2b57e28c-e330-4de3-9c12-47bf28ccf344/f21e2700-1f24-44cf-a16f-9a5cb21773bc/Untitled.png)
+        ![image](https://github.com/heewon00/k8s_kafka_guide/assets/55778040/8056125d-7bcc-4ffc-88fa-a15dcf97cafd)
+
         
     
     ```yaml
