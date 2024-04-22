@@ -1,4 +1,4 @@
-# 🔥 k8s_kafka_guide
+# [🔥 k8s_kafka_guide]
 
 # 1. Strimzi Operator란?
 
@@ -146,7 +146,7 @@ data-kafka-cluster-zookeeper-2   Bound    kafka-pv-2           5Gi        RWX   
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-      # 이름 바꾸지 말고 그대로
+      # pvc 이름 바꾸지 말고 그대로
       # data-0-kafka-cluster-kafka-1, data-0-kafka-cluster-kafka-2 등 위의 pvc정보 참고해서 만들 것!!!
       name: data-0-kafka-cluster-kafka-0 
     spec:
@@ -189,7 +189,6 @@ cluster operator가 **zookeeper 클러스터와 kafka 클러스터를 관리하�
             			openshift.io/sa.scc.mcs=s0:c27,c19
             			openshift.io/sa.scc.supplemental-groups=1000740000/10000
             ```
-            ㅎ
             위의 예시에서는 upplemental-groups가 `1000740000/10000` 이므로 `[10740000,10749999]` 사이의 값을 설정해주어야 합니다.
             
         - 다음의 값을 반영한 `cluster.yaml` 파일입니다.
